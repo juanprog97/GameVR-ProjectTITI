@@ -1,8 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text.RegularExpressions;
 using UnityEngine;
 using UnityEngine.UI;
+
 
 public class UIControllerLogin : MonoBehaviour
 {
@@ -11,8 +13,12 @@ public class UIControllerLogin : MonoBehaviour
     public InputField m_InputField;
     private bool stateMayus = false;
     public GameObject allCharacter;
+    public Text showMessage;
+    private ServicesFirebase serviceQuery;
     void Start()
     {
+
+        serviceQuery = GameObject.FindGameObjectWithTag("FirebaseService").GetComponent<ServicesFirebase>();
         GameObject[] buttonKeyboards = GameObject.FindGameObjectsWithTag("ButtonKeyboard");
         foreach(var key in buttonKeyboards)
         {
@@ -37,6 +43,8 @@ public class UIControllerLogin : MonoBehaviour
         }
         
     }
+
+
  
     private void ClickButton(string key)
     {
@@ -50,13 +58,24 @@ public class UIControllerLogin : MonoBehaviour
                 m_InputField.text += " ";
                 break;
             case "Borrar":
-                m_InputField.text = m_InputField.text.Remove(m_InputField.text.Length-1);
+                m_InputField.text = m_InputField.text.Length >0 ? m_InputField.text.Remove(m_InputField.text.Length-1) : "";
                 break;
             case "Ingresar":
-                Debug.Log("Erdaa");
+                showMessage.text = "erdaa";
+
+                serviceQuery.consultUserData(m_InputField.text);
+              
                 break;
             default:
-                m_InputField.text += stateMayus ? key.ToUpper() : key.ToLower(); ; 
+                if (key.All(char.IsDigit))
+                {
+                    m_InputField.text += key;
+                }
+                else
+                {
+                    m_InputField.text += stateMayus ? key.ToUpper() : key.ToLower(); 
+                }
+                
                 break;
         }
     }

@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "113334336767",
+    "firebase_url": "https://estrategia-ipe-rv-default-rtdb.firebaseio.com",
+    "project_id": "estrategia-ipe-rv",
+    "storage_bucket": "estrategia-ipe-rv.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:113334336767:android:fc42aca5f823697265a0ca",
+        "android_client_info": {
+          "package_name": "Estrategia.IPE.Realidad.Virtual"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "113334336767-51is0idetnt3c54dlsptfujdtbks63dn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAIkc2hXw-2gHxhczAX0C1VoNsLXIjnWbQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "113334336767-51is0idetnt3c54dlsptfujdtbks63dn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

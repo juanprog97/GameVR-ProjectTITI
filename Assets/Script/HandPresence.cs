@@ -31,7 +31,7 @@ public class HandPresence : MonoBehaviour
         {
 
         }
-        Debug.Log(devices.Count);
+      
         if (devices.Count > 0)
         {
             targetDevice = devices[0];

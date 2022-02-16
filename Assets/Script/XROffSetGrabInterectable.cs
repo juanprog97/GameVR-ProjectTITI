@@ -21,9 +21,10 @@ public class XROffSetGrabInterectable : XRGrabInteractable
 
     }
 
+
+
     // Update is called once per frame
-    protected override void OnSelectEntered(XRBaseInteractor interactor)
-    {
+    protected override void OnSelectEntered(XRBaseInteractor interactor) { 
         if (interactor is XRDirectInteractor)
         {
             attachTransform.position = interactor.transform.position;
@@ -36,5 +37,4 @@ public class XROffSetGrabInterectable : XRGrabInteractable
         }
         base.OnSelectEntered(interactor);
     }
-  
 }
